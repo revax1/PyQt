@@ -1,0 +1,9 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>table_icon.png</file>
+    <file>setting_icon.png</file>
+    <file>istockphoto-1263011147-170667a.jpg</file>
+    <file>Industry-Rack-icon.png</file>
+    <file>drug_icon.png</file>
+  </qresource>
+</RCC>
