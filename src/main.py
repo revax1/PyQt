@@ -1,6 +1,5 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 import datetime
-import pytz
 from PyQt5.QtCore import QTimer
 
 class Ui_Medicine_App(object):
