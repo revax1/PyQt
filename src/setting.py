@@ -19,7 +19,7 @@ class Ui_setting(object):
         self.setting_label.setFrameShape(QtWidgets.QFrame.Box)
         self.setting_label.setLineWidth(1)
         self.setting_label.setTextFormat(QtCore.Qt.AutoText)
-        self.setting_label.setScaledContents(False)
+        self.setting_label.setScaledContents(True)
         self.setting_label.setAlignment(QtCore.Qt.AlignCenter)
         self.setting_label.setWordWrap(True)
         self.setting_label.setObjectName("setting_label")
@@ -147,6 +147,25 @@ class Ui_setting(object):
         self.bbed_checkBox.setText("")
         self.bbed_checkBox.setTristate(False)
         self.bbed_checkBox.setObjectName("bbed_checkBox")
+        
+        checkbox_style = """
+            QCheckBox::indicator {
+                width: 30px;
+                height: 30px;
+            }
+        """
+
+        # ใช้ StyleSheet ที่กำหนดไว้สำหรับทุก QCheckBox ที่มีอยู่ใน UI
+        self.bb_checkBox.setStyleSheet(checkbox_style)
+        self.ab_checkBox.setStyleSheet(checkbox_style)
+        self.bl_checkBox.setStyleSheet(checkbox_style)
+        self.al_checkBox.setStyleSheet(checkbox_style)
+        self.bd_checkBox.setStyleSheet(checkbox_style)
+        self.ad_checkBox.setStyleSheet(checkbox_style)
+        self.bbed_checkBox.setStyleSheet(checkbox_style)
+        
+        
+        
         self.line_2 = QtWidgets.QFrame(self.centralwidget)
         self.line_2.setGeometry(QtCore.QRect(-30, 630, 1201, 20))
         self.line_2.setFrameShadow(QtWidgets.QFrame.Plain)
@@ -167,7 +186,7 @@ class Ui_setting(object):
         self.line_4.setObjectName("line_4")
         self.bb_pushButton = QtWidgets.QPushButton(self.centralwidget)
         self.bb_pushButton.setEnabled(False)
-        self.bb_pushButton.setGeometry(QtCore.QRect(90, 330, 191, 71))
+        self.bb_pushButton.setGeometry(QtCore.QRect(100, 330, 191, 71))
         font = QtGui.QFont()
         font.setPointSize(16)
         self.bb_pushButton.setFont(font)
@@ -176,7 +195,7 @@ class Ui_setting(object):
         self.bb_pushButton.setObjectName("bb_pushButton")
         self.ab_pushButton = QtWidgets.QPushButton(self.centralwidget)
         self.ab_pushButton.setEnabled(False)
-        self.ab_pushButton.setGeometry(QtCore.QRect(90, 480, 191, 71))
+        self.ab_pushButton.setGeometry(QtCore.QRect(100, 480, 191, 71))
         font = QtGui.QFont()
         font.setPointSize(16)
         self.ab_pushButton.setFont(font)
