@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="icons">
+    <file>home_icon.png</file>
     <file>table_icon.png</file>
     <file>setting_icon.png</file>
     <file>istockphoto-1263011147-170667a.jpg</file>
