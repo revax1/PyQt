@@ -1,4 +1,6 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
+from addDrug import Ui_Add_drug
+from setting import Ui_setting
 import datetime
 from PyQt5.QtCore import QTimer
 
@@ -163,6 +165,10 @@ class Ui_Medicine_App(object):
         self.retranslateUi(Medicine_App)
         QtCore.QMetaObject.connectSlotsByName(Medicine_App)
         
+        self.addDrug_pushButton.clicked.connect(self.open_add_drug_page)
+        self.setting_pushButton.clicked.connect(self.open_setting_page)
+
+        
     ###################### เวลา #############################
     def update_time(self):
         current_datetime = datetime.datetime.now()
@@ -171,6 +177,29 @@ class Ui_Medicine_App(object):
         
         self.label.setText(current_time)
         self.label_3.setText(current_date)
+
+    ###################### เพิ่มยา #############################  
+    def open_add_drug_page(self):
+        self.add_drug_window = QtWidgets.QMainWindow()
+        self.ui_add_drug = Ui_Add_drug()
+        self.ui_add_drug.setupUi(self.add_drug_window)
+        self.add_drug_window.show()
+        
+        def close_add_drug_window():
+            self.add_drug_window.close()
+
+        self.ui_add_drug.add_back_pushButton.clicked.connect(close_add_drug_window)
+        
+    def open_setting_page(self):
+        self.setting_window = QtWidgets.QMainWindow()
+        self.ui_setting = Ui_setting()
+        self.ui_setting.setupUi(self.setting_window)
+        self.setting_window.show()
+        
+        def close_setting_window():
+            self.setting_window.close()
+        
+        self.ui_setting.setting_back_pushButton.clicked.connect(close_setting_window)
 
     def retranslateUi(self, Medicine_App):
         _translate = QtCore.QCoreApplication.translate
@@ -191,5 +220,6 @@ if __name__ == "__main__":
     Medicine_App = QtWidgets.QMainWindow()
     ui = Ui_Medicine_App()
     ui.setupUi(Medicine_App)
+    Medicine_App.showFullScreen()
     Medicine_App.show()
     sys.exit(app.exec_())

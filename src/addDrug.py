@@ -1,6 +1,5 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-
 class Ui_Add_drug(object):
     def setupUi(self, Add_drug):
         Add_drug.setObjectName("Add_drug")
@@ -10,6 +9,7 @@ class Ui_Add_drug(object):
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(420, 50, 301, 71))
+        
         font = QtGui.QFont()
         font.setPointSize(24)
         font.setBold(True)
@@ -61,12 +61,12 @@ class Ui_Add_drug(object):
         self.textEdit.setFrameShape(QtWidgets.QFrame.Box)
         self.textEdit.setFrameShadow(QtWidgets.QFrame.Plain)
         self.textEdit.setObjectName("textEdit")
-        self.drugName_label_2 = QtWidgets.QLabel(self.centralwidget)
-        self.drugName_label_2.setGeometry(QtCore.QRect(70, 370, 171, 51))
+        self.drugDescribe_label = QtWidgets.QLabel(self.centralwidget)
+        self.drugDescribe_label.setGeometry(QtCore.QRect(70, 370, 171, 51))
         font = QtGui.QFont()
         font.setPointSize(18)
-        self.drugName_label_2.setFont(font)
-        self.drugName_label_2.setObjectName("drugName_label_2")
+        self.drugDescribe_label.setFont(font)
+        self.drugDescribe_label.setObjectName("drugDescribe_label")
         self.textEdit_2 = QtWidgets.QTextEdit(self.centralwidget)
         self.textEdit_2.setGeometry(QtCore.QRect(70, 440, 361, 201))
         font = QtGui.QFont()
@@ -89,13 +89,13 @@ class Ui_Add_drug(object):
         self.listWidget.setFrameShadow(QtWidgets.QFrame.Plain)
         self.listWidget.setLineWidth(1)
         self.listWidget.setObjectName("listWidget")
-        self.drugName_label_3 = QtWidgets.QLabel(self.centralwidget)
-        self.drugName_label_3.setGeometry(QtCore.QRect(740, 220, 231, 51))
+        self.drugHave_label = QtWidgets.QLabel(self.centralwidget)
+        self.drugHave_label.setGeometry(QtCore.QRect(740, 220, 231, 51))
         font = QtGui.QFont()
         font.setPointSize(18)
-        self.drugName_label_3.setFont(font)
-        self.drugName_label_3.setAlignment(QtCore.Qt.AlignCenter)
-        self.drugName_label_3.setObjectName("drugName_label_3")
+        self.drugHave_label.setFont(font)
+        self.drugHave_label.setAlignment(QtCore.Qt.AlignCenter)
+        self.drugHave_label.setObjectName("drugHave_label")
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
         self.pushButton.setGeometry(QtCore.QRect(180, 690, 131, 41))
         font = QtGui.QFont()
@@ -104,25 +104,33 @@ class Ui_Add_drug(object):
         self.pushButton.setStyleSheet("color: rgb(255, 255, 255);\n"
 "background-color: rgb(85, 170, 127);")
         self.pushButton.setObjectName("pushButton")
-        self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_2.setGeometry(QtCore.QRect(890, 730, 131, 41))
+        self.delete_pushButton = QtWidgets.QPushButton(self.centralwidget)
+        self.delete_pushButton.setGeometry(QtCore.QRect(890, 730, 131, 41))
         font = QtGui.QFont()
         font.setPointSize(12)
-        self.pushButton_2.setFont(font)
-        self.pushButton_2.setStyleSheet("background-color: rgb(255, 255, 255);")
-        self.pushButton_2.setObjectName("pushButton_2")
-        self.pushButton_3 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_3.setGeometry(QtCore.QRect(50, 80, 131, 41))
+        self.delete_pushButton.setFont(font)
+        self.delete_pushButton.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.delete_pushButton.setObjectName("delete_pushButton")
+        self.add_back_pushButton = QtWidgets.QPushButton(self.centralwidget)
+        self.add_back_pushButton.setGeometry(QtCore.QRect(50, 80, 131, 41))
         font = QtGui.QFont()
         font.setPointSize(12)
-        self.pushButton_3.setFont(font)
-        self.pushButton_3.setStyleSheet("color: rgb(255, 255, 255);\n"
+        self.add_back_pushButton.setFont(font)
+        self.add_back_pushButton.setStyleSheet("color: rgb(255, 255, 255);\n"
 "background-color: rgb(166, 0, 0)")
-        self.pushButton_3.setObjectName("pushButton_3")
+        self.add_back_pushButton.setObjectName("add_back_pushButton")
+        
         Add_drug.setCentralWidget(self.centralwidget)
-
+        
         self.retranslateUi(Add_drug)
         QtCore.QMetaObject.connectSlotsByName(Add_drug)
+        
+        Add_drug.showFullScreen()
+    
+        def close_window():
+            Add_drug.close()
+            
+        self.add_back_pushButton.clicked.connect(close_window)
 
 
     def retranslateUi(self, Add_drug):
@@ -130,11 +138,11 @@ class Ui_Add_drug(object):
         Add_drug.setWindowTitle(_translate("Add_drug", "เพิ่มยา"))
         self.label.setText(_translate("Add_drug", "   เพิ่มยา"))
         self.drugName_label.setText(_translate("Add_drug", "ชื่อยา"))
-        self.drugName_label_2.setText(_translate("Add_drug", "คำอธิบายยา"))
-        self.drugName_label_3.setText(_translate("Add_drug", "รายการยาที่มี"))
+        self.drugDescribe_label.setText(_translate("Add_drug", "คำอธิบายยา"))
+        self.drugHave_label.setText(_translate("Add_drug", "รายการยาที่มี"))
         self.pushButton.setText(_translate("Add_drug", "บันทึกยา"))
-        self.pushButton_2.setText(_translate("Add_drug", "ลบรายการ"))
-        self.pushButton_3.setText(_translate("Add_drug", "ย้อนกลับ"))
+        self.delete_pushButton.setText(_translate("Add_drug", "ลบรายการ"))
+        self.add_back_pushButton.setText(_translate("Add_drug", "ย้อนกลับ"))
 import resources_rc
 
 

@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>เพิ่มยา</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../Resources/drug_icon.png</normaloff>../Resources/drug_icon.png</iconset>
+  </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(217, 244, 255)</string>
   </property>
@@ -163,7 +167,7 @@
      <enum>QFrame::Plain</enum>
     </property>
    </widget>
-   <widget class="QLabel" name="drugName_label_2">
+   <widget class="QLabel" name="drugDescribe_label">
     <property name="geometry">
      <rect>
       <x>70</x>
@@ -249,7 +253,7 @@
      <number>1</number>
     </property>
    </widget>
-   <widget class="QLabel" name="drugName_label_3">
+   <widget class="QLabel" name="drugHave_label">
     <property name="geometry">
      <rect>
       <x>740</x>
@@ -313,7 +317,7 @@ background-color: rgb(85, 170, 127);</string>
      <string>ลบรายการ</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="add_back_pushButton">
     <property name="geometry">
      <rect>
       <x>50</x>
@@ -343,7 +347,7 @@ background-color: rgb(166, 0, 0)</string>
   <tabstop>pushButton</tabstop>
   <tabstop>listWidget</tabstop>
   <tabstop>pushButton_2</tabstop>
-  <tabstop>pushButton_3</tabstop>
+  <tabstop>add_back_pushButton</tabstop>
  </tabstops>
  <resources>
   <include location="../Resources/resources.qrc"/>
