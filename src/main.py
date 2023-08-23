@@ -1,6 +1,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from addDrug import Ui_Add_drug
 from setting import Ui_setting
+from pack_med import Ui_med_pack, Ui_med_pack2
 import datetime
 from PyQt5.QtCore import QTimer
 
@@ -147,7 +148,7 @@ class Ui_Medicine_App(object):
         self.label.setAlignment(QtCore.Qt.AlignCenter)
         self.label.setObjectName("label")
         self.label_3 = QtWidgets.QLabel(self.Home_Page)
-        self.label_3.setGeometry(QtCore.QRect(80, 60, 231, 51))
+        self.label_3.setGeometry(QtCore.QRect(80, 60, 250, 51))
         font = QtGui.QFont()
         font.setPointSize(18)
         self.label_3.setFont(font)
@@ -167,6 +168,7 @@ class Ui_Medicine_App(object):
         
         self.addDrug_pushButton.clicked.connect(self.open_add_drug_page)
         self.setting_pushButton.clicked.connect(self.open_setting_page)
+        self.putDrug_pushButton.clicked.connect(self.open_pack_page)
 
         
     ###################### เวลา #############################
@@ -178,7 +180,7 @@ class Ui_Medicine_App(object):
         self.label.setText(current_time)
         self.label_3.setText(current_date)
 
-    ###################### เพิ่มยา #############################  
+    ###################### หน้าเพิ่มยา #############################  
     def open_add_drug_page(self):
         self.add_drug_window = QtWidgets.QMainWindow()
         self.ui_add_drug = Ui_Add_drug()
@@ -190,6 +192,7 @@ class Ui_Medicine_App(object):
 
         self.ui_add_drug.add_back_pushButton.clicked.connect(close_add_drug_window)
         
+    ###################### หน้าตั้งค่ามื้อยา ############################# 
     def open_setting_page(self):
         self.setting_window = QtWidgets.QMainWindow()
         self.ui_setting = Ui_setting()
@@ -200,6 +203,18 @@ class Ui_Medicine_App(object):
             self.setting_window.close()
         
         self.ui_setting.setting_back_pushButton.clicked.connect(close_setting_window)
+        
+    ###################### หน้าวิธีจัดเรียงยา ############################# 
+    def open_pack_page(self):
+        self.pack_window = QtWidgets.QMainWindow()
+        self.ui_pack = Ui_med_pack()
+        self.ui_pack.setupUi(self.pack_window)
+        self.pack_window.show()
+        
+        def close_pack_window():
+            self.pack_window.close()
+        
+        self.ui_pack.pack_back_pushButton.clicked.connect(close_pack_window)
 
     def retranslateUi(self, Medicine_App):
         _translate = QtCore.QCoreApplication.translate
